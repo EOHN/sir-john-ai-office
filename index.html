@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sir John AI Office</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Sir John AI Office</h1>
+        <p class="subtitle">Phase 2 • Task Studio • School-Themed Virtual AI Workspace</p>
+      </div>
+      <div class="topbar-status">
+        <div class="status-card"><span class="dot online"></span> Static hosting ready</div>
+        <div class="status-card"><span class="dot online"></span> 11 AI Employees</div>
+        <div class="status-card"><span class="dot active"></span> Manual AI handoff</div>
+      </div>
+    </header>
+
+    <main class="workspace-grid">
+      <section class="campus-panel">
+        <div class="panel-heading">
+          <h2>Virtual Campus Office</h2>
+          <p>Click any AI employee to open profile, role, and available actions.</p>
+        </div>
+
+        <div class="campus-map" id="campusMap">
+          <div class="room room-admin">
+            <div class="room-label">Admin & Command Center</div>
+            <button class="bot bot-master" data-bot="master"><span class="sprite">🧠</span><span class="bot-name">MASTER</span></button>
+            <button class="bot bot-scribe" data-bot="scribe"><span class="sprite">✉️</span><span class="bot-name">SCRIBE</span></button>
+            <button class="bot bot-chronos" data-bot="chronos"><span class="sprite">⏰</span><span class="bot-name">CHRONOS</span></button>
+          </div>
+
+          <div class="room room-academics">
+            <div class="room-label">Faculty Hub</div>
+            <button class="bot bot-edu" data-bot="edu"><span class="sprite">📘</span><span class="bot-name">EDU</span></button>
+            <button class="bot bot-assess" data-bot="assess"><span class="sprite">📝</span><span class="bot-name">ASSESS</span></button>
+            <button class="bot bot-vision" data-bot="vision"><span class="sprite">🎨</span><span class="bot-name">VISION</span></button>
+          </div>
+
+          <div class="room room-robotics">
+            <div class="room-label">Robotics Lab</div>
+            <button class="bot bot-forge" data-bot="forge"><span class="sprite">🤖</span><span class="bot-name">FORGE</span></button>
+            <div class="lab-decor">⚙️ Arduino Kits • mBot • CyberPi</div>
+          </div>
+
+          <div class="room room-events">
+            <div class="room-label">Events & Research Wing</div>
+            <button class="bot bot-nexus" data-bot="nexus"><span class="sprite">📍</span><span class="bot-name">NEXUS</span></button>
+            <button class="bot bot-athena" data-bot="athena"><span class="sprite">🎓</span><span class="bot-name">ATHENA</span></button>
+          </div>
+
+          <div class="room room-sports">
+            <div class="room-label">Sports Office</div>
+            <button class="bot bot-titan" data-bot="titan"><span class="sprite">🏆</span><span class="bot-name">TITAN</span></button>
+            <div class="sports-decor">⚽ 🏀 🏓</div>
+          </div>
+
+          <div class="room room-finance">
+            <div class="room-label">Records & Finance</div>
+            <button class="bot bot-ledger" data-bot="ledger"><span class="sprite">💰</span><span class="bot-name">LEDGER</span></button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="employee-panel">
+          <div class="panel-heading">
+            <h2>Employee Details</h2>
+            <p>Selected AI employee information</p>
+          </div>
+          <div id="employeeCard" class="employee-card"></div>
+        </section>
+
+        <section class="activity-panel">
+          <div class="panel-heading">
+            <h2>Office Activity</h2>
+            <p>Local interaction log</p>
+          </div>
+          <ul id="activityLog" class="activity-log"></ul>
+        </section>
+      </aside>
+    </main>
+
+    <section class="workflow-panel" id="taskStudio">
+<div class="panel-heading"><h2>Task Studio</h2><p>Assign a task, prepare an AI prompt, and bring the answer back from ChatGPT. No AI runs automatically in this prototype.</p></div>
+<form id="taskForm"><label for="agent">Employee</label><select id="agent"></select><label for="taskInput">Task instructions</label><textarea id="taskInput" required maxlength="12000" rows="4" placeholder="Describe the work to prepare..."></textarea><div class="task-actions"><button type="submit">Create task</button><button type="button" id="routeTask">Suggest employee</button><button type="button" id="lessonWorkflow">Create lesson workflow</button></div></form><p id="taskNotice" role="status"></p>
+<div class="board-header"><h3>Task board</h3><button id="exportTasks">Export backup</button><label class="import-label">Import backup<input type="file" id="importTasks" accept="application/json"></label></div><div id="taskBoard"></div>
+</section><section class="workflow-panel">
+      <div class="panel-heading">
+        <h2>Sample School Workflow</h2>
+        <p>This visualizes how Sir John AI Office can hand off tasks between employees.</p>
+      </div>
+      <div class="workflow-lane">
+        <div class="workflow-node">Request<br><span>Create Grade 9 Arduino lesson</span></div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-node">MASTER<br><span>Routes the task</span></div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-node">EDU<br><span>Builds lesson plan</span></div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-node">VISION<br><span>Makes slides</span></div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-node">ASSESS<br><span>Creates worksheet</span></div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-node">SCRIBE<br><span>Drafts parent note / summary</span></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong>Recommended free hosting:</strong> GitHub Pages, Netlify, or Cloudflare Pages.
+      </div>
+      <div>
+        Phase 2 • Browser-local records • No live AI or Google connections.
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+<script src="tasks.js"></script>
+</body>
+</html>
