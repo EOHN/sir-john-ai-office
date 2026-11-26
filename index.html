@@ -11,12 +11,12 @@
     <header class="topbar">
       <div>
         <h1>Sir John AI Office</h1>
-        <p class="subtitle">Phase 2 • Task Studio • School-Themed Virtual AI Workspace</p>
+        <p class="subtitle">Phase 4 • Live AI Studio • School-Themed Virtual AI Workspace</p>
       </div>
       <div class="topbar-status">
         <div class="status-card"><span class="dot online"></span> Static hosting ready</div>
         <div class="status-card"><span class="dot online"></span> 11 AI Employees</div>
-        <div class="status-card"><span class="dot active"></span> Manual AI handoff</div>
+        <div class="status-card"><span class="dot active"></span> AI connection configurable</div>
       </div>
     </header>
 
@@ -87,8 +87,8 @@
     </main>
 
     <section class="workflow-panel" id="taskStudio">
-<div class="panel-heading"><h2>Task Studio</h2><p>Assign a task, prepare an AI prompt, and bring the answer back from ChatGPT. No AI runs automatically in this prototype.</p></div>
-<form id="taskForm"><label for="agent">Employee</label><select id="agent"></select><label for="taskInput">Task instructions</label><textarea id="taskInput" required maxlength="12000" rows="4" placeholder="Describe the work to prepare..."></textarea><div class="task-actions"><button type="submit">Create task</button><button type="button" id="routeTask">Suggest employee</button><button type="button" id="lessonWorkflow">Create lesson workflow</button></div></form><p id="taskNotice" role="status"></p>
+<div class="panel-heading"><h2>Task Studio</h2><p>Assign a task and run it with the connected cloud AI, or use the manual ChatGPT option.</p></div>
+<details id="aiSettings"><summary>Connect cloud AI</summary><p>Use your deployed Cloudflare Worker URL and private office access token. Do not enter student records or confidential information. The token stays in this tab only.</p><label for="workerUrl">Worker URL</label><input id="workerUrl" type="url" placeholder="https://your-worker.your-subdomain.workers.dev"><label for="officeToken">Office access token</label><input id="officeToken" type="password" autocomplete="off"><button id="testAI" type="button">Test AI connection</button><p id="aiStatus" role="status">Not tested</p></details><form id="taskForm"><label for="agent">Employee</label><select id="agent"></select><label for="taskInput">Task instructions</label><textarea id="taskInput" required maxlength="12000" rows="4" placeholder="Describe the work to prepare..."></textarea><div class="task-actions"><button type="submit">Create task</button><button type="button" id="routeTask">Suggest employee</button><button type="button" id="lessonWorkflow">Create lesson workflow</button></div></form><p id="taskNotice" role="status"></p>
 <div class="board-header"><h3>Task board</h3><button id="exportTasks">Export backup</button><label class="import-label">Import backup<input type="file" id="importTasks" accept="application/json"></label></div><div id="taskBoard"></div>
 </section><section class="workflow-panel">
       <div class="panel-heading">
@@ -115,12 +115,13 @@
         <strong>Recommended free hosting:</strong> GitHub Pages, Netlify, or Cloudflare Pages.
       </div>
       <div>
-        Phase 2 • Browser-local records • No live AI or Google connections.
+        Phase 4 • Browser-local records • Google connections not yet available.
       </div>
     </footer>
   </div>
 
   <script src="script.js"></script>
 <script src="tasks.js"></script>
+<script src="live-ai.js"></script>
 </body>
 </html>
